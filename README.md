@@ -35,7 +35,7 @@ To run this script, the following dependencies must be installed:
 1. Place the video file (e.g., `853889-hd_1920_1080_25fps.mp4`) in the script directory or specify the correct path in `video_path`.
 2. Run the script:
    ```
-   python test3.py
+   python Detect.py
    ```
 3. Press `q` to exit the detection window.
 
