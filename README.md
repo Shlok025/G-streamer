@@ -29,7 +29,7 @@ To run this script, the following dependencies must be installed:
    ```
 
 3. **YOLO Files**: Download the YOLOv3 configuration and weight files from [Darknet's YOLO page](https://pjreddie.com/darknet/yolo/) and place them in the same directory as the script.
-
+   (Note:- i have not uploaded yolov3 weights kindly download from above link and place it within the directory itself)
     
 ## Usage
 1. Place the video file (e.g., `853889-hd_1920_1080_25fps.mp4`) in the script directory or specify the correct path in `video_path`.
