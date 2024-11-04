@@ -29,6 +29,7 @@ To run this script, the following dependencies must be installed:
    ```
 
 3. **YOLO Files**: Download the YOLOv3 configuration and weight files from [Darknet's YOLO page](https://pjreddie.com/darknet/yolo/) and place them in the same directory as the script.
+   
    (Note:- i have not uploaded yolov3 weights kindly download from above link and place it within the directory itself)
     
 ## Usage
