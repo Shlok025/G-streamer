@@ -54,7 +54,7 @@ import numpy as np
 import os
 
 class YOLODetectionPipeline:
-    def __init__(self, video_source):
+    def __init__(self, video_source=None):
         # Initialize GStreamer
         Gst.init(None)
         print("GStreamer initialized")
@@ -63,7 +63,7 @@ class YOLODetectionPipeline:
         self.display_width = 1080
         self.display_height = 720
 
-        # Create pipeline string
+        # Pipeline for video file input
         pipeline_str = (
             f'filesrc location="{video_source}" ! '
             'decodebin ! '
@@ -72,7 +72,7 @@ class YOLODetectionPipeline:
             f'video/x-raw,format=BGR,width={self.display_width},height={self.display_height} ! '
             'appsink name=sink emit-signals=true sync=false max-buffers=1 drop=true'
         )
-        
+
         print(f"Pipeline string: {pipeline_str}")
 
         # Create pipeline
@@ -217,14 +217,11 @@ class YOLODetectionPipeline:
         self.loop.quit()
 
 def main():
-    video_path = "853889-hd_1920_1080_25fps.mp4"  # Replace with your video file
-    
-    if not os.path.exists(video_path):
-        print(f"Error: Video file not found at {video_path}")
-        return
-    
     try:
-        pipeline = YOLODetectionPipeline(video_path)
+        # pipeline = YOLODetectionPipeline()  # For webcam
+        
+        video_path = "5738706-hd_1920_1080_24fps.mp4"  # Replace with your video file path
+        pipeline = YOLODetectionPipeline(video_source=video_path)
         pipeline.run()
     except Exception as e:
         print(f"Error: {e}")
@@ -233,6 +230,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 ```
 
